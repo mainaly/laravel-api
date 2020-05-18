@@ -20,7 +20,7 @@ namespace App\Http\Controllers\API;
  * )
  * @OA\Server(
  *     description="Laravel Swagger API server",
- *     url="http://127.0.0.1:8000/api"
+ *     url="http://api.rf-server.ru/api"
  * )
  */
 
