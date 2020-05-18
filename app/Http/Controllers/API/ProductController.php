@@ -24,6 +24,9 @@ class ProductController extends BaseController
      *     operationId="productsGet",
      *     tags={"Goods"},
      *     summary="Display a listing of the resource",
+     *     security={
+     *       {"bearer": {}},
+     *     },
      *     @OA\Parameter(
      *         name="page",
      *         in="query",
@@ -40,7 +43,11 @@ class ProductController extends BaseController
      *     @OA\Response(
      *         response="404",
      *         description="Good not found"
-     *     )
+     *     ),
+     *     @OA\Response(
+     *          response=401,
+     *          description="Unauthenticated",
+     *      ),
      * )
      *
      * Display a listing of the resource.
@@ -109,9 +116,9 @@ class ProductController extends BaseController
      *      tags={"Goods"},
      *      summary="Get product information",
      *      description="Returns product data",
-     *      security={
-     *        {"bearer": {}},
-     *      },
+     *     security={
+     *       {"passport": {}},
+     *     },
      *      @OA\Parameter(
      *          name="id",
      *          description="product id",
@@ -165,7 +172,7 @@ class ProductController extends BaseController
      *      tags={"Goods"},
      *      summary="Update existing Goods",
      *     security={
-     *       {"app_id": {}},
+     *       {"bearer": {}},
      *     },
      *      description="Returns updated project data Goods",
      *      @OA\Parameter(

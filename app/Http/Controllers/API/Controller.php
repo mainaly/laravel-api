@@ -22,14 +22,6 @@ namespace App\Http\Controllers\API;
  *     description="Laravel Swagger API server",
  *     url="http://127.0.0.1:8000/api"
  * )
- * @OA\SecurityScheme(
- *   securityScheme="bearerAuth",
- *   in="header",
- *   name="Authorization",
- *   type="http",
- *   scheme="bearer",
- *   bearerFormat="JWT",
- * )
  */
 
 class Controller extends \App\Http\Controllers\Controller
