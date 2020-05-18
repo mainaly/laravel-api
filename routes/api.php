@@ -18,9 +18,10 @@ use Illuminate\Http\Request;
 //});
 
 Route::post('register', 'API\UserController@register');
-Route::get('login', 'API\UserController@login');
+Route::post('login', 'API\UserController@login');
+Route::resource('products', 'API\ProductController');
 
 Route::middleware('auth:api')->group( function () {
-    Route::resource('products', 'API\ProductController');
+
     Route::get('me', 'API\UserController@details');
 });
