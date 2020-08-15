@@ -19,7 +19,10 @@ use Illuminate\Http\Request;
 
 Route::post('register', 'API\UserController@register');
 Route::post('login', 'API\UserController@login');
-
+Route::get('/search', 'API\Server\ServerController@search');
+Route::resource('servers', 'API\Server\ServerController');
+Route::get('/servers/{slug}', 'API\Server\ServerController@show');
+Route::resource('description', 'API\Server\DescriptionController');
 
 Route::middleware('auth:api')->group( function () {
     Route::resource('products', 'API\ProductController');

@@ -42,16 +42,6 @@ class UserController extends Controller
      */
 
     public function login(){
-        //        $user = auth()->attempt($request->only(['email', 'password']));
-        //        if (!$user) {
-        //            return  response()->json(['errors' => ['message'=>'No user']], 422);
-        //        } else {
-        //            auth()->user()->update(['api_token' => Str::random(80)]);
-        //
-        //            return  new Response(auth()->user());
-        //        }
-
-
         if(Auth::attempt(['email' => request('email'), 'password' => request('password')])){
             $user = Auth::user();
             $success['token'] =  $user->createToken('MyApp')-> accessToken;

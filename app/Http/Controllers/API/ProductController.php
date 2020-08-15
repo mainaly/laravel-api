@@ -2,7 +2,6 @@
 
 namespace App\Http\Controllers\API;
 
-
 use App\Http\Requests\Goods\CreateGoodRequest;
 use App\Http\Requests\Goods\UpdateGoodRequest;
 use Illuminate\Http\Request;
