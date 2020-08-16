@@ -4,17 +4,19 @@ namespace App\Http\Controllers\API;
 
 use App\Http\Requests\Goods\CreateGoodRequest;
 use App\Http\Requests\Goods\UpdateGoodRequest;
+use Exception;
 use Illuminate\Http\Request;
 use App\Http\Controllers\API\BaseController as BaseController;
 use App\Models\Product;
-use Validator;
+use Illuminate\Http\Response;
+use Illuminate\Support\Facades\Validator;
 
 class ProductController extends BaseController
 {
     /**
      * Display a listing of the resource.
      *
-     * @return \Illuminate\Http\Response
+     * @return Response
      */
 
     /**
@@ -51,7 +53,7 @@ class ProductController extends BaseController
      *
      * Display a listing of the resource.
      *
-     * @return \Illuminate\Http\Response
+     * @return Response
      */
     public function index()
     {
@@ -84,15 +86,15 @@ class ProductController extends BaseController
      * )
      * Store a newly created resource in storage.
      *
-     * @param \Illuminate\Http\Request $request
-     * @return \Illuminate\Http\Response
+     * @param Request $request
+     * @return Response
      */
 
     /**
      * Store a newly created resource in storage.
      *
-     * @param \Illuminate\Http\Request $request
-     * @return \Illuminate\Http\Response
+     * @param CreateGoodRequest $request
+     * @return Response
      */
     public function store(CreateGoodRequest $request)
     {
@@ -151,7 +153,7 @@ class ProductController extends BaseController
      * Display the specified resource.
      *
      * @param int $id
-     * @return \Illuminate\Http\Response
+     * @return Response
      */
     public function show($id)
     {
@@ -214,9 +216,9 @@ class ProductController extends BaseController
     /**
      * Update the specified resource in storage.
      *
-     * @param \Illuminate\Http\Request $request
-     * @param int $id
-     * @return \Illuminate\Http\Response
+     * @param UpdateGoodRequest $request
+     * @param Product $product
+     * @return Response
      */
     public function update(UpdateGoodRequest $request, Product $product)
     {
@@ -280,8 +282,9 @@ class ProductController extends BaseController
     /**
      * Remove the specified resource from storage.
      *
-     * @param int $id
-     * @return \Illuminate\Http\Response
+     * @param Product $product
+     * @return Response
+     * @throws Exception
      */
     public function destroy(Product $product)
     {
