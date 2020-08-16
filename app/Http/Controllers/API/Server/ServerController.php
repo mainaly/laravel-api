@@ -3,6 +3,7 @@
 namespace App\Http\Controllers\API\Server;
 
 use App\Http\Controllers\Controller;
+use App\Models\Server\Description;
 use Illuminate\Http\Request;
 use App\Http\Controllers\API\BaseController as BaseController;
 use App\Models\Server\Server;
@@ -17,7 +18,13 @@ class ServerController extends BaseController
      */
     public function index()
     {
-        $servers = Server::query()->paginate(10);
+	
+//	    $servers = Server::find(1);
+//	    $userDob = $servers->description;
+//	    dd($servers);
+    	
+//        $servers = Server::query()->paginate(10);
+	    $servers = Server::with('description')->get();
         return $this->sendResponse($servers->toArray(), 'Servers retrieved successfully.');
     }
 
@@ -43,6 +50,7 @@ class ServerController extends BaseController
     public function store(Request $request)
     {
         $input = $request->all();
+        //когда дойдет до сохранения
         $validator = Validator::make($input, [
             'name' => 'required|min:3|max:100',
             'url' => 'required|min:3|max:100'

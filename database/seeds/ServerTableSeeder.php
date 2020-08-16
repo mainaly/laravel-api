@@ -11,32 +11,22 @@ class ServerTableSeeder extends Seeder
      */
     public function run()
     {
+    	
         $data = [
             [
                 'name' => 'RFS',
-                'url' => 'rf-server.ru',
-                'likes' => '100',
-                'status' => '1',
-                'position' => '1',
-                'slug' => 'rfs',
+	            'slug' => 'rfs',
+	            'about' => 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aliquam assumenda culpa fuga mollitia natus provident quae quisquam recusandae sint tenetur! A blanditiis delectus dicta doloremque dolores? Architecto inventore necessitatibus quo!',
+                'logo' => 'https://via.placeholder.com/300x150',
+                'video' => 'https://via.placeholder.com/300x150',
                 'country_id' => 1,
             ],
             [
-                'name' => 'RF-old',
-                'url' => 'RF-old.ru',
-                'likes' => '10',
-                'status' => '2',
-                'position' => '2',
-                'slug' => 'rfold',
-                'country_id' => 1,
-            ],
-            [
-                'name' => 'RF2232',
-                'url' => 'RF2232.ru',
-                'likes' => '50',
-                'status' => '1',
-                'position' => '3',
-                'slug' => 'rf2232',
+                'name' => 'RFold',
+	            'slug' => 'rfold',
+	            'about' => '11Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aliquam assumenda culpa fuga mollitia natus provident quae quisquam recusandae sint tenetur! A blanditiis delectus dicta doloremque dolores? Architecto inventore necessitatibus quo!',
+                'logo' => 'https://via.placeholder.com/300x150',
+                'video' => 'https://via.placeholder.com/300x150',
                 'country_id' => 2,
             ],
         ];

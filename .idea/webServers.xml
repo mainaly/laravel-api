@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="WebServers">
+    <option name="servers">
+      <webServer id="67d0aaea-39b7-45e7-acbf-a3ae50fa911e" name="rfs-api" url="http://31.31.198.61">
+        <fileTransfer host="31.31.198.61" port="21" rootFolder="/www/api.rf-server.ru" accessType="FTPS">
+          <advancedOptions>
+            <advancedOptions dataProtectionLevel="Private" passiveMode="true" shareSSLContext="true" />
+          </advancedOptions>
+          <option name="port" value="21" />
+        </fileTransfer>
+      </webServer>
+    </option>
+  </component>
+</project>
