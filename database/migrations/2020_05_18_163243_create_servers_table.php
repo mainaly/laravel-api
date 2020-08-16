@@ -17,11 +17,13 @@ class CreateServersTable extends Migration
         Schema::create('servers', function (Blueprint $table) {
             $table->increments('id');
             $table->string('name');
-            $table->string('url');
-            $table->integer('likes');
-            $table->integer('status');
-            $table->integer('position');
-            $table->timestamps();
+	        $table->string('slug');
+	        $table->string('about');
+	        $table->string('logo');
+	        $table->string('video');
+	        $table->timestamps();
+	        $table->integer('country_id')->unsigned();
+	        $table->foreign('country_id')->references('id')->on('countries');
         });
     }
 
